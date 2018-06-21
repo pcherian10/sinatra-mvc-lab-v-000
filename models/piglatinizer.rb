@@ -7,9 +7,8 @@ class PigLatinizer
 
   def latinize
     counter = 0
-    @text.split(" ")
 
-    @text.collect do |word|
+    @text.split(" ").collect do |word|
         word.split("")
         if"bcdfghjklmnpqrstvwxyz".split("").include? (word[0])
           word[(1..-1)] + word[0]+"ay"
@@ -25,6 +24,7 @@ class PigLatinizer
           end
           word[(counter)..-1] + word[0..(counter-1)] + "ay"
         end
+      end
     end
 
 end
