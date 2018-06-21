@@ -11,7 +11,13 @@ class PigLatinizer
     if"bcdfghjklmnpqrstvwxyz".split("").include? (text[0])
       @text[(1..-1)] + @text[0]+"ay"
 
-    elsif !("aeiou").split(""). 
+    if"aeiou".split("").include? (text[0])
+      @text +"ay"
+
+    elsif !("aeiou").split("").include? (text[0] && text[1])
+      
+
+    elsif 
 
 
 end
