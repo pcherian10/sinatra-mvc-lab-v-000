@@ -6,6 +6,12 @@ class PigLatinizer
   end
 
   def latinize
+    @text.split("")
+
+    if"bcdfghjklmnpqrstvwxyz".split("").include? (text[0])
+      @text[(1..-1)] + @text[0]+"ay"
+
+    elsif
 
 
 
