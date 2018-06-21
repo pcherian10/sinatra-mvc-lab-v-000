@@ -6,6 +6,7 @@ class PigLatinizer
   end
 
   def latinize
+    consonant
     @text.split(" ")
 
     @text.collect do |word|
@@ -14,7 +15,11 @@ class PigLatinizer
         word[(1..-1)] + word[0]+"ay"
       elsif"aeiou".split("").include? (word[0])
         word +"ay"
-      elsif !("aeiou").split("").include? (text[0] && text[1])
+      else
+        consonants = word.scan(/[bcdfghjklmnpqrstvwxyz]/)
+        consonant_index = word.index(consonants[0])
+        
+        
 
 
 
