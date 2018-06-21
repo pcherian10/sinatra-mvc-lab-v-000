@@ -2,7 +2,7 @@ class PigLatinizer
   attr_reader :text
 
   def initialize(text)
-    @text = text.downcase
+    @text = text
   end
 
   def latinize
@@ -10,13 +10,13 @@ class PigLatinizer
 
     @text.split(" ").collect do |word|
         word.split("")
-        if"bcdfghjklmnpqrstvwxyz".split("").include? (word[0])
+        if"bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ".split("").include? (word[0])
           word[(1..-1)] + word[0]+"ay"
-        elsif "aeiou".split("").include? (word[0])
+        elsif "aeiouAEIOU".split("").include? (word[0])
           word +"ay"
         else
           word.each do |letter|
-            if "bcdfghjklmnpqrstvwxyz".split("").include? (letter)
+            if "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ".split("").include? (letter)
               letter
             else
               break
