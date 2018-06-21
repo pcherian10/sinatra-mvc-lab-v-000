@@ -16,7 +16,7 @@ class PigLatinizer
       elsif "aeiou".split("").include? (word[0])
         word +"ay"
       else
-        word.split("").each do |letter|
+        word.each do |letter|
           if "bcdfghjklmnpqrstvwxyz".split("").include? (letter)
             letter
           else
@@ -25,6 +25,7 @@ class PigLatinizer
         end
         word[(counter)..-1] + word[0..(counter-1)] + "ay"
       end
+    end
 
 
 
